@@ -1,6 +1,3 @@
-// cuda_intro.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #include <math.h>
 
@@ -14,11 +11,12 @@ void add(int n, float* x, float* y)
 
 int main(void)
 {
-    int N = 1 << 20; // 1M elements
+    int N = 1 << 20;
+    float *x, *y;
 
-    float *x, * y;
-    x = cudaMallocManaged(&x, N*sizeof(float));
-    y = cudaMallocManaged(&x, N*sizeof(float));
+    // Allocate Unified Memory – accessible from CPU or GPU
+    cudaMallocManaged(&x, N * sizeof(float));
+    cudaMallocManaged(&y, N * sizeof(float));
 
     // initialize x and y arrays on the host
     for (int i = 0; i < N; i++) {
