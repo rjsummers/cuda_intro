@@ -15,8 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <CudaCompile Include="cuda_intro.cu">
-      <Filter>Source Files</Filter>
-    </CudaCompile>
+    <CudaCompile Include="add_grid.cu" />
   </ItemGroup>
 </Project>
